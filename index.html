@@ -1,0 +1,17 @@
+<html></html>
+  <head>
+    <title>WebSocket Example</title>
+  </head>
+  <body>
+    <h1>WebSocket Example</h1>
+  </body>
+  <script>
+    let ws;
+    let proto = window.location.protocol === "https:" ? "wss://" : "ws://";
+    ws = new WebSocket(`${proto}${window.location.host}`);
+
+    ws.onmessage = (event) => {
+      console.log(event.data);
+    };
+  </script>
+</html>
